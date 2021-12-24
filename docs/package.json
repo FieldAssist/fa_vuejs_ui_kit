@@ -1,0 +1,35 @@
+{
+  "name": "fa_vuejs_ui_kit",
+  "version": "0.0.1",
+  "description": "Official FA VueJs UI Kit",
+  "main": "index.js",
+  "authors": {
+    "name": "Ayush P Gupta",
+    "email": "ayushpguptaapg@gmail.com"
+  },
+  "repository": "/fa_vuejs_ui_kit",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "docs": "run-s docs:*",
+    "docs:api": "vuedoc.md ../src/lib-components/*.vue --output ./",
+    "docs:api-button": "vuedoc.md ../src/lib-components/buttons/*.vue --output ./src/components/buttons",
+    "docs:vuepress": "vuepress build docs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "@vuepress/plugin-register-components": "^1.9.4",
+    "typescript": "^4.5.4",
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-demo-code": "^0.6.0",
+    "vuepress-plugin-typescript": "^0.3.1"
+  },
+  "dependencies": {
+    "@kawarimidoll/vuepress-plugin-tailwind": "^2.0.0",
+    "autoprefixer": "^9.8.8",
+    "fa_vuejs_ui_kit": "file:..",
+    "postcss": "^7.0.39",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+  }
+}

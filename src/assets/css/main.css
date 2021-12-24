@@ -1,0 +1,11 @@
+.btn {
+    @apply px-3 py-1.5 text-sm font-medium rounded;
+}
+
+.btn:disabled {
+    @apply cursor-not-allowed;
+}
+
+table input {
+    @apply text-center px-1 py-1 border border-gray-300 rounded;
+}
