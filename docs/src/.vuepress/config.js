@@ -29,10 +29,13 @@ module.exports = {
      * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
      */
     themeConfig: {
-        repo: '',
-        editLinks: false,
-        docsDir: '',
-        editLinkText: '',
+        repo: "https://github.com/FieldAssist/fa_vuejs_ui_kit",
+        repoLabel: "Contribute!",
+        docsDir: 'docs/src',
+        editLinks: true,
+        docsBranch: "main",
+        searchPlaceholder: 'Search...',
+        editLinkText: "Help us improve this page!",
         lastUpdated: false,
         nav: [
             {
