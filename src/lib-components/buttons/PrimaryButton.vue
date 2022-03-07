@@ -1,36 +1,25 @@
 <template>
-  <button
-    :class="{ 'hover:bg-blue-600': !disabled }"
-    :disabled="disabled"
-    class="btn btn-blue"
-    @click="onButtonClick"
-  >
-    <slot></slot>
+  <button :disabled="disabled" class="btn btn-blue" @click="onButtonClick">
+    <span v-if="icon" class="material-icons text-base font-bold">{{
+      icon
+    }}</span>
+    <span class="hidden sm:inline">
+      <slot />
+    </span>
   </button>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-/**
- * <PrimaryButton>Primary Button</PrimaryButton>
- */
-
-export default Vue.extend({
+<script>
+export default {
   name: 'PrimaryButton',
   props: {
     disabled: { type: Boolean, default: false, required: false },
+    icon: { type: String, required: false, default: '' },
   },
   methods: {
-    onButtonClick():void {
+    onButtonClick() {
       this.$emit('click')
     },
   },
-})
-</script>
-
-<style>
-.btn-blue {
-  @apply text-white bg-blue-500;
 }
-</style>
+</script>

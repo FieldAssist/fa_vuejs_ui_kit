@@ -1,7 +1,7 @@
 <template>
   <button
     :disabled="disabled"
-    class="btn btn-red"
+    class="btn bg-green-500"
     @click="onButtonClick"
   >
     <slot />
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'DangerButton',
+  name: 'TempButton',
   props: {
     disabled: { type: Boolean, default: false, required: false },
   },
@@ -21,9 +21,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.btn-red {
-  @apply bg-red-500 text-white;
-}
-</style>

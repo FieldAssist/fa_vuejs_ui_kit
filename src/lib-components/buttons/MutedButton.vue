@@ -1,7 +1,8 @@
 <template>
   <button
+    :class="{ 'hover:bg-gray-600': !disabled }"
     :disabled="disabled"
-    class="btn btn-red"
+    class="btn btn-gray text-center"
     @click="onButtonClick"
   >
     <slot />
@@ -10,7 +11,7 @@
 
 <script>
 export default {
-  name: 'DangerButton',
+  name: 'MutedButton',
   props: {
     disabled: { type: Boolean, default: false, required: false },
   },
@@ -23,7 +24,7 @@ export default {
 </script>
 
 <style>
-.btn-red {
-  @apply bg-red-500 text-white;
+.btn-gray {
+  @apply bg-gray-500 text-white;
 }
 </style>

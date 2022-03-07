@@ -5,14 +5,11 @@
     class="btn btn-yellow"
     @click="onButtonClick"
   >
-    <slot></slot>
+    <slot />
   </button>
 </template>
 
 <script>
-/**
- * <WarningButton>Warning Button</WarningButton>
- */
 export default {
   name: 'WarningButton',
   props: {

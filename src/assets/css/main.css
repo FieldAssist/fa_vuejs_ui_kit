@@ -1,11 +1,116 @@
-.btn {
-    @apply px-3 py-1.5 text-sm font-medium rounded;
+/*
+ * Copyright 2022 FieldAssist
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: #1976d2;
+    --color-secondary: #6c757d;
+    --color-success: #10b981;
+    --color-danger: #f44336;
+
+    --color-card-background: #fff;
+    --color-background: #f3f4f6;
+    --color-app-bar-background: #fff;
+
+    --color-icon: #4b5563;
+    --color-icon-hover: #e8f0fe;
+
+    --color-border: #e4e4e7;
+
+    /* Tables */
+    --color-table-header-background: #f4f5f8;
+    --color-table-hover: #f1f5fd;
 }
 
-.btn:disabled {
-    @apply cursor-not-allowed;
+.dark-theme {
+    --color-card-background: #52525b;
+    --color-background: #3f3f46;
+    --color-app-bar-background: #3f3f46;
+
+    --color-icon: #f9fafb;
+    --color-icon-hover: #71717a;
+    --color-current: #f3f4f6;
+
+    --color-border: #71717a;
+
+    /* Tables */
+    --color-table-header-background: #52525b;
+    --color-table-hover: #71717a;
 }
 
-table input {
-    @apply text-center px-1 py-1 border border-gray-300 rounded;
+@layer base {
+    * {
+        @apply text-current;
+    }
+
+    body {
+        @apply bg-background;
+    }
+
+    table input {
+        @apply text-center px-1 py-1 border border-gray-300 rounded;
+    }
+}
+
+@layer components {
+    .card {
+        @apply bg-card-background border border-border rounded m-2 p-3;
+    }
+
+    .btn {
+        @apply px-2.5 h-8 text-sm font-medium rounded cursor-pointer inline-flex items-center justify-center gap-x-1 text-center;
+    }
+
+    .btn:hover:enabled {
+        @apply -translate-y-0.5 shadow-md;
+    }
+
+    .btn:disabled {
+        @apply cursor-not-allowed;
+    }
+
+    .btn.btn-red {
+        @apply bg-red-500 text-white;
+    }
+
+    .btn.btn-red:hover:enabled {
+        @apply bg-red-600;
+    }
+
+    .btn.btn-blue {
+        @apply bg-blue-500 text-white;
+    }
+
+    .btn.btn-blue:hover:enabled {
+        @apply bg-blue-600;
+    }
+
+    .btn.btn-green {
+        @apply bg-success text-white;
+    }
+
+    .btn.btn-green:hover:enabled {
+        @apply hover:bg-green-600;
+    }
+
+    .btn.btn-muted:enabled {
+        @apply bg-gray-200 text-gray-700 border border-gray-400;
+    }
+
+    .btn.btn-muted:hover:enabled {
+        @apply bg-gray-500 text-white;
+    }
 }

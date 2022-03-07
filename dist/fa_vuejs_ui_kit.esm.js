@@ -1,12 +1,26 @@
-import Vue from 'vue';
-
-var script$2 = Vue.extend({
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$5 = {
   name: 'PrimaryButton',
   props: {
     disabled: {
       type: Boolean,
       default: false,
       required: false
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   methods: {
@@ -15,7 +29,7 @@ var script$2 = Vue.extend({
     }
 
   }
-});
+};
 
 function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
     if (typeof shadowMode !== 'boolean') {
@@ -92,6 +106,85 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
     return script;
 }
 
+/* script */
+const __vue_script__$5 = script$5;
+/* template */
+
+var __vue_render__$5 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('button', {
+    staticClass: "btn btn-blue",
+    attrs: {
+      "disabled": _vm.disabled
+    },
+    on: {
+      "click": _vm.onButtonClick
+    }
+  }, [_vm.icon ? _c('span', {
+    staticClass: "material-icons text-base font-bold"
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _c('span', {
+    staticClass: "hidden sm:inline"
+  }, [_vm._t("default")], 2)]);
+};
+
+var __vue_staticRenderFns__$5 = [];
+/* style */
+
+const __vue_inject_styles__$5 = undefined;
+/* scoped */
+
+const __vue_scope_id__$5 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$5 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$5 = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$a = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$5,
+  staticRenderFns: __vue_staticRenderFns__$5
+}, __vue_inject_styles__$5, __vue_script__$5, __vue_scope_id__$5, __vue_is_functional_template__$5, __vue_module_identifier__$5, false, undefined, undefined, undefined);
+
+var __vue_component__$b = __vue_component__$a;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$4 = {
+  name: 'DangerButton',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
+    }
+  },
+  methods: {
+    onButtonClick() {
+      this.$emit('click');
+    }
+
+  }
+};
+
 const isOldIE = typeof navigator !== 'undefined' &&
     /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
 function createInjector(context) {
@@ -146,6 +239,178 @@ function addStyle(id, css) {
 }
 
 /* script */
+const __vue_script__$4 = script$4;
+/* template */
+
+var __vue_render__$4 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('button', {
+    staticClass: "btn btn-red",
+    attrs: {
+      "disabled": _vm.disabled
+    },
+    on: {
+      "click": _vm.onButtonClick
+    }
+  }, [_vm._t("default")], 2);
+};
+
+var __vue_staticRenderFns__$4 = [];
+/* style */
+
+const __vue_inject_styles__$4 = function (inject) {
+  if (!inject) return;
+  inject("data-v-2dfdb5bc_0", {
+    source: ".btn-red{@apply bg-red-500 text-white;}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$4 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$4 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$4 = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$8 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$4,
+  staticRenderFns: __vue_staticRenderFns__$4
+}, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, false, createInjector, undefined, undefined);
+
+var __vue_component__$9 = __vue_component__$8;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$3 = {
+  name: 'MutedButton',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
+    }
+  },
+  methods: {
+    onButtonClick() {
+      this.$emit('click');
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$3 = script$3;
+/* template */
+
+var __vue_render__$3 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('button', {
+    staticClass: "btn btn-gray text-center",
+    class: {
+      'hover:bg-gray-600': !_vm.disabled
+    },
+    attrs: {
+      "disabled": _vm.disabled
+    },
+    on: {
+      "click": _vm.onButtonClick
+    }
+  }, [_vm._t("default")], 2);
+};
+
+var __vue_staticRenderFns__$3 = [];
+/* style */
+
+const __vue_inject_styles__$3 = function (inject) {
+  if (!inject) return;
+  inject("data-v-0eda0b11_0", {
+    source: ".btn-gray{@apply bg-gray-500 text-white;}",
+    map: undefined,
+    media: undefined
+  });
+};
+/* scoped */
+
+
+const __vue_scope_id__$3 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$3 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$3 = false;
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$6 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$3,
+  staticRenderFns: __vue_staticRenderFns__$3
+}, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, false, createInjector, undefined, undefined);
+
+var __vue_component__$7 = __vue_component__$6;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$2 = {
+  name: 'SuccessButton',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: ''
+    }
+  },
+  methods: {
+    onButtonClick() {
+      this.$emit('click');
+    }
+
+  }
+};
+
+/* script */
 const __vue_script__$2 = script$2;
 /* template */
 
@@ -157,32 +422,25 @@ var __vue_render__$2 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('button', {
-    staticClass: "btn btn-blue",
-    class: {
-      'hover:bg-blue-600': !_vm.disabled
-    },
+    staticClass: "btn btn-green",
     attrs: {
       "disabled": _vm.disabled
     },
     on: {
       "click": _vm.onButtonClick
     }
-  }, [_vm._t("default")], 2);
+  }, [_vm.icon ? _c('span', {
+    staticClass: "material-icons text-base font-bold"
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _c('span', {
+    staticClass: "hidden sm:inline"
+  }, [_vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__$2 = [];
 /* style */
 
-const __vue_inject_styles__$2 = function (inject) {
-  if (!inject) return;
-  inject("data-v-13f47439_0", {
-    source: ".btn-blue{@apply text-white bg-blue-500;}",
-    map: undefined,
-    media: undefined
-  });
-};
+const __vue_inject_styles__$2 = undefined;
 /* scoped */
-
 
 const __vue_scope_id__$2 = undefined;
 /* module identifier */
@@ -191,6 +449,8 @@ const __vue_module_identifier__$2 = undefined;
 /* functional template */
 
 const __vue_is_functional_template__$2 = false;
+/* style inject */
+
 /* style inject SSR */
 
 /* style inject shadow dom */
@@ -198,7 +458,7 @@ const __vue_is_functional_template__$2 = false;
 const __vue_component__$4 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$2,
   staticRenderFns: __vue_staticRenderFns__$2
-}, __vue_inject_styles__$2, __vue_script__$2, __vue_scope_id__$2, __vue_is_functional_template__$2, __vue_module_identifier__$2, false, createInjector, undefined, undefined);
+}, __vue_inject_styles__$2, __vue_script__$2, __vue_scope_id__$2, __vue_is_functional_template__$2, __vue_module_identifier__$2, false, undefined, undefined, undefined);
 
 var __vue_component__$5 = __vue_component__$4;
 
@@ -214,7 +474,7 @@ var __vue_component__$5 = __vue_component__$4;
 //
 //
 var script$1 = {
-  name: 'MutedButton',
+  name: 'WarningButton',
   props: {
     disabled: {
       type: Boolean,
@@ -242,9 +502,9 @@ var __vue_render__$1 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('button', {
-    staticClass: "btn btn-gray",
+    staticClass: "btn btn-yellow",
     class: {
-      'hover:bg-gray-600': !_vm.disabled
+      'hover:bg-yellow-600': !_vm.disabled
     },
     attrs: {
       "disabled": _vm.disabled
@@ -260,8 +520,8 @@ var __vue_staticRenderFns__$1 = [];
 
 const __vue_inject_styles__$1 = function (inject) {
   if (!inject) return;
-  inject("data-v-09fe5f6c_0", {
-    source: ".btn-gray{@apply text-white bg-gray-500;}",
+  inject("data-v-43e2e6d2_0", {
+    source: ".btn-yellow{@apply bg-yellow-500;}",
     map: undefined,
     media: undefined
   });
@@ -287,55 +547,32 @@ const __vue_component__$2 = /*#__PURE__*/normalizeComponent({
 
 var __vue_component__$3 = __vue_component__$2;
 
-var script = /*#__PURE__*/Vue.extend({
-  name: 'Fa_vuejs_ui_kitSample',
-  components: {},
-
-  // vue component name
-  data() {
-    return {
-      counter: 5,
-      initCounter: 5,
-      message: {
-        action: null,
-        amount: null
-      }
-    };
-  },
-
-  computed: {
-    changedBy() {
-      const {
-        message
-      } = this;
-      if (!message.action) return 'initialized';
-      return `${message.action} ${message.amount || ''}`.trim();
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script = {
+  name: 'TempButton',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
     }
-
   },
   methods: {
-    increment(arg) {
-      const amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter += amount;
-      this.message.action = 'incremented by';
-      this.message.amount = amount;
-    },
-
-    decrement(arg) {
-      const amount = typeof arg !== 'number' ? 1 : arg;
-      this.counter -= amount;
-      this.message.action = 'decremented by';
-      this.message.amount = amount;
-    },
-
-    reset() {
-      this.counter = this.initCounter;
-      this.message.action = 'reset';
-      this.message.amount = null;
+    onButtonClick() {
+      this.$emit('click');
     }
 
   }
-});
+};
 
 /* script */
 const __vue_script__ = script;
@@ -348,52 +585,32 @@ var __vue_render__ = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', {
-    staticClass: "fa_vuejs_ui_kit-sample"
-  }, [_c('p', [_vm._v("The counter was " + _vm._s(_vm.changedBy) + " to "), _c('b', [_vm._v(_vm._s(_vm.counter))]), _vm._v(".")]), _vm._v(" "), _c('button', {
+  return _c('button', {
+    staticClass: "btn bg-green-500",
+    attrs: {
+      "disabled": _vm.disabled
+    },
     on: {
-      "click": _vm.decrement
+      "click": _vm.onButtonClick
     }
-  }, [_vm._v("\n    Click -1\n  ")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": function ($event) {
-        return _vm.increment(5);
-      }
-    }
-  }, [_vm._v("\n    Click +5\n  ")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": function ($event) {
-        return _vm.decrement(5);
-      }
-    }
-  }, [_vm._v("\n    Click -5\n  ")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.reset
-    }
-  }, [_vm._v("\n    Reset\n  ")])]);
+  }, [_vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__ = [];
 /* style */
 
-const __vue_inject_styles__ = function (inject) {
-  if (!inject) return;
-  inject("data-v-34e30013_0", {
-    source: ".fa_vuejs_ui_kit-sample[data-v-34e30013]{display:block;width:400px;margin:25px auto;border:1px solid #ccc;background:#eaeaea;text-align:center;padding:25px}.fa_vuejs_ui_kit-sample p[data-v-34e30013]{margin:0 0 1em}",
-    map: undefined,
-    media: undefined
-  });
-};
+const __vue_inject_styles__ = undefined;
 /* scoped */
 
-
-const __vue_scope_id__ = "data-v-34e30013";
+const __vue_scope_id__ = undefined;
 /* module identifier */
 
 const __vue_module_identifier__ = undefined;
 /* functional template */
 
 const __vue_is_functional_template__ = false;
+/* style inject */
+
 /* style inject SSR */
 
 /* style inject shadow dom */
@@ -401,17 +618,20 @@ const __vue_is_functional_template__ = false;
 const __vue_component__ = /*#__PURE__*/normalizeComponent({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
-}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, createInjector, undefined, undefined);
+}, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, undefined, undefined, undefined);
 
 var __vue_component__$1 = __vue_component__;
 
-/* eslint-disable import/prefer-default-export */
+// buttons
 
 var components = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  PrimaryButton: __vue_component__$5,
-  MutedButton: __vue_component__$3,
-  Fa_vuejs_ui_kitSample: __vue_component__$1
+  PrimaryButton: __vue_component__$b,
+  DangerButton: __vue_component__$9,
+  MutedButton: __vue_component__$7,
+  SuccessButton: __vue_component__$5,
+  WarningButton: __vue_component__$3,
+  TempButton: __vue_component__$1
 });
 
 // Import vue components
@@ -423,4 +643,4 @@ const install = function installFa_vuejs_ui_kit(Vue) {
   });
 }; // Create module definition for Vue.use()
 
-export { __vue_component__$1 as Fa_vuejs_ui_kitSample, __vue_component__$3 as MutedButton, __vue_component__$5 as PrimaryButton, install as default };
+export { __vue_component__$9 as DangerButton, __vue_component__$7 as MutedButton, __vue_component__$b as PrimaryButton, __vue_component__$5 as SuccessButton, __vue_component__$1 as TempButton, __vue_component__$3 as WarningButton, install as default };

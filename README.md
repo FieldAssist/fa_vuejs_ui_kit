@@ -1,8 +1,31 @@
 # FA VueJs UI Toolkit
 
-Unofficial FieldAssist UI kit based on VueJs
+Official FieldAssist UI kit based on VueJs
 
-## Getting Started
+## Installation
+
+### Locally
+
+1. Clone this repo in your local.
+2. Add UI kit via `npm i <path to ui kit>`. For eg `npm i ./../fa_vuejs_ui_kit` (assuming this repo lies next to your host project).
+3. Import the css in your main.ts or global css
+
+`@import "fa_vuejs_ui_kit/src/assets/css/main.css";`
+
+## Development
+
+### Running
+
+1. Clone the repo.
+2. Run `npm i`.
+3. Run `npm run serve`.
+
+### Release (Locally)
+
+1. Run `npm run build`
+2. Again run `npm i` on your host project
+
+### Release (npm)
 
 TBD
 
