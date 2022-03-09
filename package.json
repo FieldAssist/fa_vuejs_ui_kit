@@ -13,7 +13,8 @@
   "module": "dist/fa_vuejs_ui_kit.esm.js",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "assets/*"
   ],
   "devDependencies": {
     "@babel/core": "^7.14.6",
