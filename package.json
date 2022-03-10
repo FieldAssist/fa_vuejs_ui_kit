@@ -14,7 +14,7 @@
   "files": [
     "dist/*",
     "src/**/*.vue",
-    "assets/*"
+    "src/assets/*"
   ],
   "devDependencies": {
     "@babel/core": "^7.14.6",
