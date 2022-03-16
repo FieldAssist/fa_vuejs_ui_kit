@@ -1,0 +1,53 @@
+@layer components {
+  .btn {
+    @apply px-2.5 h-8 text-sm font-medium rounded cursor-pointer inline-flex items-center justify-center gap-x-1 text-center;
+  }
+
+  .btn:hover:enabled {
+    @apply -translate-y-0.5 shadow-md;
+  }
+
+  .btn:disabled {
+    @apply cursor-not-allowed;
+  }
+
+  .btn.btn-red {
+    @apply bg-red-500 text-white;
+  }
+
+  .btn.btn-red:hover:enabled {
+    @apply bg-red-600;
+  }
+
+  .btn.btn-blue {
+    @apply bg-blue-500 text-white;
+  }
+
+  .btn.btn-blue:hover:enabled {
+    @apply bg-blue-600;
+  }
+
+  .btn.btn-green {
+    @apply bg-success text-white;
+  }
+
+  .btn.btn-green:hover:enabled {
+    @apply hover:bg-green-600;
+  }
+
+  .btn.btn-muted:enabled {
+    @apply bg-gray-200 text-gray-800 border border-gray-400;
+  }
+
+  .btn.btn-muted:hover:enabled {
+    @apply bg-gray-500 text-white;
+  }
+
+  .btn.btn-warning:enabled {
+    @apply bg-yellow-500;
+  }
+
+  .btn.btn-warning:hover:enabled {
+    @apply bg-yellow-600;
+  }
+}

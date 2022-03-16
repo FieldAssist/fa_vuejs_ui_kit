@@ -1,30 +1,28 @@
 <template>
-  <button
-    :class="{ 'hover:bg-yellow-600': !disabled }"
-    :disabled="disabled"
-    class="btn btn-yellow"
-    @click="onButtonClick"
-  >
-    <slot />
-  </button>
+  <div>
+    <button :disabled="disabled" class="btn btn-warning" @click="onButtonClick">
+      <span v-if="icon" class="material-icons text-base font-bold">{{
+          icon
+        }}</span>
+      <span v-if="icon" class="hidden sm:inline">
+        <slot />
+      </span>
+      <slot v-else />
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'WarningButton',
+  name: "PrimaryButton",
   props: {
     disabled: { type: Boolean, default: false, required: false },
+    icon: { type: String, required: false, default: "" },
   },
   methods: {
     onButtonClick() {
-      this.$emit('click')
+      this.$emit("click");
     },
   },
-}
+};
 </script>
-
-<style>
-.btn-yellow {
-  @apply bg-yellow-500;
-}
-</style>

@@ -1,0 +1,5 @@
+@layer components {
+  .card {
+    @apply bg-card-background border border-border rounded m-2 p-3;
+  }
+}

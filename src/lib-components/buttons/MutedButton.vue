@@ -1,30 +1,28 @@
 <template>
-  <button
-    :class="{ 'hover:bg-gray-600': !disabled }"
-    :disabled="disabled"
-    class="btn btn-gray text-center"
-    @click="onButtonClick"
-  >
-    <slot />
-  </button>
+  <div>
+    <button :disabled="disabled" class="btn btn-muted" @click="onButtonClick">
+      <span v-if="icon" class="material-icons text-base font-bold">{{
+          icon
+        }}</span>
+      <span v-if="icon" class="hidden sm:inline">
+        <slot />
+      </span>
+      <slot v-else />
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'MutedButton',
+  name: "PrimaryButton",
   props: {
     disabled: { type: Boolean, default: false, required: false },
+    icon: { type: String, required: false, default: "" },
   },
   methods: {
     onButtonClick() {
-      this.$emit('click')
+      this.$emit("click");
     },
   },
-}
+};
 </script>
-
-<style>
-.btn-gray {
-  @apply bg-gray-500 text-white;
-}
-</style>

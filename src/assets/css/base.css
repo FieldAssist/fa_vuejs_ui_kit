@@ -1,0 +1,13 @@
+@layer base {
+  * {
+    @apply text-current;
+  }
+
+  body {
+    @apply bg-background;
+  }
+
+  table input {
+    @apply text-center px-1 py-1 border border-gray-300 rounded;
+  }
+}
