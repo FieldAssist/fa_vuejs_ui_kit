@@ -1,29 +1,28 @@
 <template>
-  <button
-    :disabled="disabled"
-    class="btn btn-red"
-    @click="onButtonClick"
-  >
-    <slot />
-  </button>
+  <div>
+    <button :disabled="disabled" class="btn btn-red" @click="onButtonClick">
+      <span v-if="icon" class="material-icons text-base font-bold">{{
+        icon
+      }}</span>
+      <span v-if="icon" class="hidden sm:inline">
+        <slot />
+      </span>
+      <slot v-else />
+    </button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'DangerButton',
+  name: "DangerButton",
   props: {
     disabled: { type: Boolean, default: false, required: false },
+    icon: { type: String, required: false, default: "" },
   },
   methods: {
     onButtonClick() {
-      this.$emit('click')
+      this.$emit("click");
     },
   },
-}
+};
 </script>
-
-<style>
-.btn-red {
-  @apply bg-red-500 text-white;
-}
-</style>
