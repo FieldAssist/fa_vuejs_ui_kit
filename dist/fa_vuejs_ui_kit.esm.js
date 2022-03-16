@@ -12,7 +12,7 @@
 //
 //
 //
-var script$5 = {
+var script$4 = {
   name: "PrimaryButton",
   props: {
     disabled: {
@@ -110,94 +110,6 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
 }
 
 /* script */
-const __vue_script__$5 = script$5;
-/* template */
-
-var __vue_render__$5 = function () {
-  var _vm = this;
-
-  var _h = _vm.$createElement;
-
-  var _c = _vm._self._c || _h;
-
-  return _c('div', [_c('button', {
-    staticClass: "btn btn-blue",
-    attrs: {
-      "disabled": _vm.disabled
-    },
-    on: {
-      "click": _vm.onButtonClick
-    }
-  }, [_vm.icon ? _c('span', {
-    staticClass: "material-icons text-base font-bold"
-  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
-    staticClass: "hidden sm:inline"
-  }, [_vm._t("default")], 2) : _vm._t("default")], 2)]);
-};
-
-var __vue_staticRenderFns__$5 = [];
-/* style */
-
-const __vue_inject_styles__$5 = undefined;
-/* scoped */
-
-const __vue_scope_id__$5 = undefined;
-/* module identifier */
-
-const __vue_module_identifier__$5 = undefined;
-/* functional template */
-
-const __vue_is_functional_template__$5 = false;
-/* style inject */
-
-/* style inject SSR */
-
-/* style inject shadow dom */
-
-const __vue_component__$a = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$5,
-  staticRenderFns: __vue_staticRenderFns__$5
-}, __vue_inject_styles__$5, __vue_script__$5, __vue_scope_id__$5, __vue_is_functional_template__$5, __vue_module_identifier__$5, false, undefined, undefined, undefined);
-
-var __vue_component__$b = __vue_component__$a;
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script$4 = {
-  name: "DangerButton",
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-      required: false
-    },
-    icon: {
-      type: String,
-      required: false,
-      default: ""
-    }
-  },
-  methods: {
-    onButtonClick() {
-      this.$emit("click");
-    }
-
-  }
-};
-
-/* script */
 const __vue_script__$4 = script$4;
 /* template */
 
@@ -209,7 +121,7 @@ var __vue_render__$4 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', [_c('button', {
-    staticClass: "btn btn-red",
+    staticClass: "btn btn-blue",
     attrs: {
       "disabled": _vm.disabled
     },
@@ -260,75 +172,30 @@ var __vue_component__$9 = __vue_component__$8;
 //
 //
 //
+//
+//
+//
 var script$3 = {
-  name: 'MutedButton',
+  name: "DangerButton",
   props: {
     disabled: {
       type: Boolean,
       default: false,
       required: false
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: ""
     }
   },
   methods: {
     onButtonClick() {
-      this.$emit('click');
+      this.$emit("click");
     }
 
   }
 };
-
-const isOldIE = typeof navigator !== 'undefined' &&
-    /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
-function createInjector(context) {
-    return (id, style) => addStyle(id, style);
-}
-let HEAD;
-const styles = {};
-function addStyle(id, css) {
-    const group = isOldIE ? css.media || 'default' : id;
-    const style = styles[group] || (styles[group] = { ids: new Set(), styles: [] });
-    if (!style.ids.has(id)) {
-        style.ids.add(id);
-        let code = css.source;
-        if (css.map) {
-            // https://developer.chrome.com/devtools/docs/javascript-debugging
-            // this makes source maps inside style tags work properly in Chrome
-            code += '\n/*# sourceURL=' + css.map.sources[0] + ' */';
-            // http://stackoverflow.com/a/26603875
-            code +=
-                '\n/*# sourceMappingURL=data:application/json;base64,' +
-                    btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) +
-                    ' */';
-        }
-        if (!style.element) {
-            style.element = document.createElement('style');
-            style.element.type = 'text/css';
-            if (css.media)
-                style.element.setAttribute('media', css.media);
-            if (HEAD === undefined) {
-                HEAD = document.head || document.getElementsByTagName('head')[0];
-            }
-            HEAD.appendChild(style.element);
-        }
-        if ('styleSheet' in style.element) {
-            style.styles.push(code);
-            style.element.styleSheet.cssText = style.styles
-                .filter(Boolean)
-                .join('\n');
-        }
-        else {
-            const index = style.ids.size - 1;
-            const textNode = document.createTextNode(code);
-            const nodes = style.element.childNodes;
-            if (nodes[index])
-                style.element.removeChild(nodes[index]);
-            if (nodes.length)
-                style.element.insertBefore(textNode, nodes[index]);
-            else
-                style.element.appendChild(textNode);
-        }
-    }
-}
 
 /* script */
 const __vue_script__$3 = script$3;
@@ -341,33 +208,26 @@ var __vue_render__$3 = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('button', {
-    staticClass: "btn btn-gray text-center",
-    class: {
-      'hover:bg-gray-600': !_vm.disabled
-    },
+  return _c('div', [_c('button', {
+    staticClass: "btn btn-red",
     attrs: {
       "disabled": _vm.disabled
     },
     on: {
       "click": _vm.onButtonClick
     }
-  }, [_vm._t("default")], 2);
+  }, [_vm.icon ? _c('span', {
+    staticClass: "material-icons text-base font-bold"
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
+    staticClass: "hidden sm:inline"
+  }, [_vm._t("default")], 2) : _vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__$3 = [];
 /* style */
 
-const __vue_inject_styles__$3 = function (inject) {
-  if (!inject) return;
-  inject("data-v-0eda0b11_0", {
-    source: ".btn-gray{@apply bg-gray-500 text-white;}",
-    map: undefined,
-    media: undefined
-  });
-};
+const __vue_inject_styles__$3 = undefined;
 /* scoped */
-
 
 const __vue_scope_id__$3 = undefined;
 /* module identifier */
@@ -376,6 +236,8 @@ const __vue_module_identifier__$3 = undefined;
 /* functional template */
 
 const __vue_is_functional_template__$3 = false;
+/* style inject */
+
 /* style inject SSR */
 
 /* style inject shadow dom */
@@ -383,7 +245,7 @@ const __vue_is_functional_template__$3 = false;
 const __vue_component__$6 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$3,
   staticRenderFns: __vue_staticRenderFns__$3
-}, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, false, createInjector, undefined, undefined);
+}, __vue_inject_styles__$3, __vue_script__$3, __vue_scope_id__$3, __vue_is_functional_template__$3, __vue_module_identifier__$3, false, undefined, undefined, undefined);
 
 var __vue_component__$7 = __vue_component__$6;
 
@@ -402,7 +264,7 @@ var __vue_component__$7 = __vue_component__$6;
 //
 //
 var script$2 = {
-  name: "SuccessButton",
+  name: "PrimaryButton",
   props: {
     disabled: {
       type: Boolean,
@@ -435,7 +297,7 @@ var __vue_render__$2 = function () {
   var _c = _vm._self._c || _h;
 
   return _c('div', [_c('button', {
-    staticClass: "btn btn-green",
+    staticClass: "btn btn-muted",
     attrs: {
       "disabled": _vm.disabled
     },
@@ -486,18 +348,26 @@ var __vue_component__$5 = __vue_component__$4;
 //
 //
 //
+//
+//
+//
 var script$1 = {
-  name: 'WarningButton',
+  name: "SuccessButton",
   props: {
     disabled: {
       type: Boolean,
       default: false,
       required: false
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: ""
     }
   },
   methods: {
     onButtonClick() {
-      this.$emit('click');
+      this.$emit("click");
     }
 
   }
@@ -514,33 +384,26 @@ var __vue_render__$1 = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('button', {
-    staticClass: "btn btn-yellow",
-    class: {
-      'hover:bg-yellow-600': !_vm.disabled
-    },
+  return _c('div', [_c('button', {
+    staticClass: "btn btn-green",
     attrs: {
       "disabled": _vm.disabled
     },
     on: {
       "click": _vm.onButtonClick
     }
-  }, [_vm._t("default")], 2);
+  }, [_vm.icon ? _c('span', {
+    staticClass: "material-icons text-base font-bold"
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
+    staticClass: "hidden sm:inline"
+  }, [_vm._t("default")], 2) : _vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__$1 = [];
 /* style */
 
-const __vue_inject_styles__$1 = function (inject) {
-  if (!inject) return;
-  inject("data-v-43e2e6d2_0", {
-    source: ".btn-yellow{@apply bg-yellow-500;}",
-    map: undefined,
-    media: undefined
-  });
-};
+const __vue_inject_styles__$1 = undefined;
 /* scoped */
-
 
 const __vue_scope_id__$1 = undefined;
 /* module identifier */
@@ -549,6 +412,8 @@ const __vue_module_identifier__$1 = undefined;
 /* functional template */
 
 const __vue_is_functional_template__$1 = false;
+/* style inject */
+
 /* style inject SSR */
 
 /* style inject shadow dom */
@@ -556,7 +421,7 @@ const __vue_is_functional_template__$1 = false;
 const __vue_component__$2 = /*#__PURE__*/normalizeComponent({
   render: __vue_render__$1,
   staticRenderFns: __vue_staticRenderFns__$1
-}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, createInjector, undefined, undefined);
+}, __vue_inject_styles__$1, __vue_script__$1, __vue_scope_id__$1, __vue_is_functional_template__$1, __vue_module_identifier__$1, false, undefined, undefined, undefined);
 
 var __vue_component__$3 = __vue_component__$2;
 
@@ -570,18 +435,27 @@ var __vue_component__$3 = __vue_component__$2;
 //
 //
 //
+//
+//
+//
+//
 var script = {
-  name: 'TempButton',
+  name: "PrimaryButton",
   props: {
     disabled: {
       type: Boolean,
       default: false,
       required: false
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: ""
     }
   },
   methods: {
     onButtonClick() {
-      this.$emit('click');
+      this.$emit("click");
     }
 
   }
@@ -598,15 +472,19 @@ var __vue_render__ = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('button', {
-    staticClass: "btn bg-green-500",
+  return _c('div', [_c('button', {
+    staticClass: "btn btn-warning",
     attrs: {
       "disabled": _vm.disabled
     },
     on: {
       "click": _vm.onButtonClick
     }
-  }, [_vm._t("default")], 2);
+  }, [_vm.icon ? _c('span', {
+    staticClass: "material-icons text-base font-bold"
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
+    staticClass: "hidden sm:inline"
+  }, [_vm._t("default")], 2) : _vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -639,12 +517,11 @@ var __vue_component__$1 = __vue_component__;
 
 var components = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  PrimaryButton: __vue_component__$b,
-  DangerButton: __vue_component__$9,
-  MutedButton: __vue_component__$7,
-  SuccessButton: __vue_component__$5,
-  WarningButton: __vue_component__$3,
-  TempButton: __vue_component__$1
+  PrimaryButton: __vue_component__$9,
+  DangerButton: __vue_component__$7,
+  MutedButton: __vue_component__$5,
+  SuccessButton: __vue_component__$3,
+  WarningButton: __vue_component__$1
 });
 
 // Import vue components
@@ -656,4 +533,4 @@ const install = function installFa_vuejs_ui_kit(Vue) {
   });
 }; // Create module definition for Vue.use()
 
-export { __vue_component__$9 as DangerButton, __vue_component__$7 as MutedButton, __vue_component__$b as PrimaryButton, __vue_component__$5 as SuccessButton, __vue_component__$1 as TempButton, __vue_component__$3 as WarningButton, install as default };
+export { __vue_component__$7 as DangerButton, __vue_component__$5 as MutedButton, __vue_component__$9 as PrimaryButton, __vue_component__$3 as SuccessButton, __vue_component__$1 as WarningButton, install as default };
