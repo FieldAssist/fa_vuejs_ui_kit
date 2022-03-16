@@ -3,9 +3,10 @@
     <span v-if="icon" class="material-icons text-base font-bold">{{
       icon
     }}</span>
-    <span class="hidden sm:inline">
+    <span v-if="icon" class="hidden sm:inline">
       <slot />
     </span>
+    <slot v-else />
   </button>
 </template>
 
