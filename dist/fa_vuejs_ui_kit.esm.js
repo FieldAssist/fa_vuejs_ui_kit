@@ -10,8 +10,10 @@
 //
 //
 //
+//
+//
 var script$5 = {
-  name: 'PrimaryButton',
+  name: "PrimaryButton",
   props: {
     disabled: {
       type: Boolean,
@@ -21,12 +23,12 @@ var script$5 = {
     icon: {
       type: String,
       required: false,
-      default: ''
+      default: ""
     }
   },
   methods: {
     onButtonClick() {
-      this.$emit('click');
+      this.$emit("click");
     }
 
   }
@@ -118,7 +120,7 @@ var __vue_render__$5 = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('button', {
+  return _c('div', [_c('button', {
     staticClass: "btn btn-blue",
     attrs: {
       "disabled": _vm.disabled
@@ -130,7 +132,7 @@ var __vue_render__$5 = function () {
     staticClass: "material-icons text-base font-bold"
   }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
     staticClass: "hidden sm:inline"
-  }, [_vm._t("default")], 2) : _vm._t("default")], 2);
+  }, [_vm._t("default")], 2) : _vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__$5 = [];
@@ -169,8 +171,97 @@ var __vue_component__$b = __vue_component__$a;
 //
 //
 //
+//
+//
+//
+//
 var script$4 = {
-  name: 'DangerButton',
+  name: "DangerButton",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: ""
+    }
+  },
+  methods: {
+    onButtonClick() {
+      this.$emit("click");
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$4 = script$4;
+/* template */
+
+var __vue_render__$4 = function () {
+  var _vm = this;
+
+  var _h = _vm.$createElement;
+
+  var _c = _vm._self._c || _h;
+
+  return _c('div', [_c('button', {
+    staticClass: "btn btn-red",
+    attrs: {
+      "disabled": _vm.disabled
+    },
+    on: {
+      "click": _vm.onButtonClick
+    }
+  }, [_vm.icon ? _c('span', {
+    staticClass: "material-icons text-base font-bold"
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
+    staticClass: "hidden sm:inline"
+  }, [_vm._t("default")], 2) : _vm._t("default")], 2)]);
+};
+
+var __vue_staticRenderFns__$4 = [];
+/* style */
+
+const __vue_inject_styles__$4 = undefined;
+/* scoped */
+
+const __vue_scope_id__$4 = undefined;
+/* module identifier */
+
+const __vue_module_identifier__$4 = undefined;
+/* functional template */
+
+const __vue_is_functional_template__$4 = false;
+/* style inject */
+
+/* style inject SSR */
+
+/* style inject shadow dom */
+
+const __vue_component__$8 = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__$4,
+  staticRenderFns: __vue_staticRenderFns__$4
+}, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, false, undefined, undefined, undefined);
+
+var __vue_component__$9 = __vue_component__$8;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$3 = {
+  name: 'MutedButton',
   props: {
     disabled: {
       type: Boolean,
@@ -240,88 +331,6 @@ function addStyle(id, css) {
 }
 
 /* script */
-const __vue_script__$4 = script$4;
-/* template */
-
-var __vue_render__$4 = function () {
-  var _vm = this;
-
-  var _h = _vm.$createElement;
-
-  var _c = _vm._self._c || _h;
-
-  return _c('button', {
-    staticClass: "btn btn-red",
-    attrs: {
-      "disabled": _vm.disabled
-    },
-    on: {
-      "click": _vm.onButtonClick
-    }
-  }, [_vm._t("default")], 2);
-};
-
-var __vue_staticRenderFns__$4 = [];
-/* style */
-
-const __vue_inject_styles__$4 = function (inject) {
-  if (!inject) return;
-  inject("data-v-2dfdb5bc_0", {
-    source: ".btn-red{@apply bg-red-500 text-white;}",
-    map: undefined,
-    media: undefined
-  });
-};
-/* scoped */
-
-
-const __vue_scope_id__$4 = undefined;
-/* module identifier */
-
-const __vue_module_identifier__$4 = undefined;
-/* functional template */
-
-const __vue_is_functional_template__$4 = false;
-/* style inject SSR */
-
-/* style inject shadow dom */
-
-const __vue_component__$8 = /*#__PURE__*/normalizeComponent({
-  render: __vue_render__$4,
-  staticRenderFns: __vue_staticRenderFns__$4
-}, __vue_inject_styles__$4, __vue_script__$4, __vue_scope_id__$4, __vue_is_functional_template__$4, __vue_module_identifier__$4, false, createInjector, undefined, undefined);
-
-var __vue_component__$9 = __vue_component__$8;
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script$3 = {
-  name: 'MutedButton',
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-      required: false
-    }
-  },
-  methods: {
-    onButtonClick() {
-      this.$emit('click');
-    }
-
-  }
-};
-
-/* script */
 const __vue_script__$3 = script$3;
 /* template */
 
@@ -389,8 +398,11 @@ var __vue_component__$7 = __vue_component__$6;
 //
 //
 //
+//
+//
+//
 var script$2 = {
-  name: 'SuccessButton',
+  name: "SuccessButton",
   props: {
     disabled: {
       type: Boolean,
@@ -400,12 +412,12 @@ var script$2 = {
     icon: {
       type: String,
       required: false,
-      default: ''
+      default: ""
     }
   },
   methods: {
     onButtonClick() {
-      this.$emit('click');
+      this.$emit("click");
     }
 
   }
@@ -422,7 +434,7 @@ var __vue_render__$2 = function () {
 
   var _c = _vm._self._c || _h;
 
-  return _c('button', {
+  return _c('div', [_c('button', {
     staticClass: "btn btn-green",
     attrs: {
       "disabled": _vm.disabled
@@ -432,9 +444,9 @@ var __vue_render__$2 = function () {
     }
   }, [_vm.icon ? _c('span', {
     staticClass: "material-icons text-base font-bold"
-  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _c('span', {
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
     staticClass: "hidden sm:inline"
-  }, [_vm._t("default")], 2)]);
+  }, [_vm._t("default")], 2) : _vm._t("default")], 2)]);
 };
 
 var __vue_staticRenderFns__$2 = [];
