@@ -11,12 +11,12 @@
  * limitations under the License.
  */
 
-@import "theme.css";
+@import "./theme.css";
 
 @import "tailwindcss/base";
-@import "base.css";
+@import "./base.css";
 
 @import "tailwindcss/components";
-@import "component.css";
+@import "./component.css";
 
 @import "tailwindcss/utilities";
