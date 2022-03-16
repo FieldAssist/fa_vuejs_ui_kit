@@ -9,6 +9,7 @@
 //
 //
 //
+//
 var script$5 = {
   name: 'PrimaryButton',
   props: {
@@ -127,9 +128,9 @@ var __vue_render__$5 = function () {
     }
   }, [_vm.icon ? _c('span', {
     staticClass: "material-icons text-base font-bold"
-  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _c('span', {
+  }, [_vm._v(_vm._s(_vm.icon))]) : _vm._e(), _vm._v(" "), _vm.icon ? _c('span', {
     staticClass: "hidden sm:inline"
-  }, [_vm._t("default")], 2)]);
+  }, [_vm._t("default")], 2) : _vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__$5 = [];
