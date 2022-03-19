@@ -13,33 +13,35 @@
 
 <template>
   <input
-    v-model="enteredText"
-    :disabled="disabled"
-    class="w-[4.5rem] rounded border border-gray-300 py-1 px-1 text-center"
-    :max="isPercentage ? 100 : null"
-    :min="0"
-    type="number"
-    @input="$emit('on-change')"
+      v-model="enteredText"
+      :disabled="disabled"
+      :max="isPercentage ? 100 : null"
+      :min="0"
+      class="w-[4.5rem] rounded border border-gray-300 py-1 px-1 text-center"
+      type="number"
+      @input="$emit('on-change')"
   />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, {PropType} from "vue";
+
+export default Vue.extend({
   name: 'TableNumberInput',
   props: {
-    value: { default: 0, required: false, type: null },
-    disabled: { default: false, required: false, type: Boolean },
-    isPercentage: { default: false, required: false, type: Boolean },
+    value: {default: 0, required: false},
+    disabled: {default: false, required: false, type: Boolean},
+    isPercentage: {default: false, required: false, type: Boolean as PropType<boolean>},
   },
   computed: {
     enteredText: {
       get() {
-        return this.value
+        return (this as any).value
       },
       set(val) {
-        this.$emit('input', val)
+        (this as Vue).$emit('input', val)
       },
     },
   },
-}
+})
 </script>

@@ -12,8 +12,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   name: "SuccessButton",
   props: {
     disabled: { type: Boolean, default: false, required: false },
@@ -24,5 +26,5 @@ export default {
       this.$emit("click");
     },
   },
-};
+})
 </script>
