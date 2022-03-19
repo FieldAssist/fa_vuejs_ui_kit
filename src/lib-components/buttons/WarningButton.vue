@@ -16,7 +16,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "PrimaryButton",
+  name: "WarningButton",
   props: {
     disabled: { type: Boolean, default: false, required: false },
     icon: { type: String, required: false, default: "" },

@@ -224,7 +224,7 @@ const __vue_component__$8 = /*#__PURE__*/normalizeComponent({
 var __vue_component__$9 = __vue_component__$8;
 
 var script$3 = Vue.extend({
-  name: "PrimaryButton",
+  name: "MutedButton",
   props: {
     disabled: {
       type: Boolean,
@@ -372,7 +372,7 @@ const __vue_component__$4 = /*#__PURE__*/normalizeComponent({
 var __vue_component__$5 = __vue_component__$4;
 
 var script$1 = Vue.extend({
-  name: "PrimaryButton",
+  name: "WarningButton",
   props: {
     disabled: {
       type: Boolean,
