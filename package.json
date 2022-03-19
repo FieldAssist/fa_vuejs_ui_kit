@@ -1,6 +1,6 @@
 {
   "name": "fa_vuejs_ui_kit",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Official FieldAssist UI kit",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.ts",
