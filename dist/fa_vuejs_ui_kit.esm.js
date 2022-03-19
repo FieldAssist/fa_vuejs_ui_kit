@@ -1,18 +1,6 @@
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script$5 = {
+import Vue from 'vue';
+
+var script$5 = Vue.extend({
   name: "PrimaryButton",
   props: {
     disabled: {
@@ -32,7 +20,7 @@ var script$5 = {
     }
 
   }
-};
+});
 
 function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
     if (typeof shadowMode !== 'boolean') {
@@ -161,21 +149,7 @@ const __vue_component__$a = /*#__PURE__*/normalizeComponent({
 
 var __vue_component__$b = __vue_component__$a;
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script$4 = {
+var script$4 = Vue.extend({
   name: "DangerButton",
   props: {
     disabled: {
@@ -195,7 +169,7 @@ var script$4 = {
     }
 
   }
-};
+});
 
 /* script */
 const __vue_script__$4 = script$4;
@@ -249,21 +223,7 @@ const __vue_component__$8 = /*#__PURE__*/normalizeComponent({
 
 var __vue_component__$9 = __vue_component__$8;
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script$3 = {
+var script$3 = Vue.extend({
   name: "PrimaryButton",
   props: {
     disabled: {
@@ -283,7 +243,7 @@ var script$3 = {
     }
 
   }
-};
+});
 
 /* script */
 const __vue_script__$3 = script$3;
@@ -337,21 +297,7 @@ const __vue_component__$6 = /*#__PURE__*/normalizeComponent({
 
 var __vue_component__$7 = __vue_component__$6;
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script$2 = {
+var script$2 = Vue.extend({
   name: "SuccessButton",
   props: {
     disabled: {
@@ -371,7 +317,7 @@ var script$2 = {
     }
 
   }
-};
+});
 
 /* script */
 const __vue_script__$2 = script$2;
@@ -425,21 +371,7 @@ const __vue_component__$4 = /*#__PURE__*/normalizeComponent({
 
 var __vue_component__$5 = __vue_component__$4;
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script$1 = {
+var script$1 = Vue.extend({
   name: "PrimaryButton",
   props: {
     disabled: {
@@ -459,7 +391,7 @@ var script$1 = {
     }
 
   }
-};
+});
 
 /* script */
 const __vue_script__$1 = script$1;
@@ -513,38 +445,12 @@ const __vue_component__$2 = /*#__PURE__*/normalizeComponent({
 
 var __vue_component__$3 = __vue_component__$2;
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var script = {
+var script = Vue.extend({
   name: 'TableNumberInput',
   props: {
     value: {
       default: 0,
-      required: false,
-      type: null
+      required: false
     },
     disabled: {
       default: false,
@@ -569,7 +475,7 @@ var script = {
 
     }
   }
-};
+});
 
 /* script */
 const __vue_script__ = script;
