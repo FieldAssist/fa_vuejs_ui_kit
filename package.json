@@ -1,12 +1,12 @@
 {
   "name": "fa_vuejs_ui_kit",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "Official FieldAssist UI kit",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.ts",
     "build": "npm run build:es",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts ./dist/types/src/lib-components",
+    "postbuild": "rimraf ./dist/types/dev",
     "prebuild": "rimraf ./dist"
   },
   "main": "dist/fa_vuejs_ui_kit.ssr.js",
