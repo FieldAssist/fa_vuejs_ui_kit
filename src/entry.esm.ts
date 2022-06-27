@@ -16,3 +16,14 @@ export default install;
 // To allow individual component use, export components
 // each can be registered via Vue.component()
 export * from '@/lib-components/index';
+
+export interface KeyPress {
+  keyCode: number;
+  keyEvent: string;
+  modifiers: string[];
+  preventDefault: boolean;
+  multipleKeys: string[];
+  setupListeners(): void;
+  addEventListener(expectedEvent: Event): void;
+  eventHandler(expectedEvent: Event): void;
+}
