@@ -1,8 +1,11 @@
-<script>
+<template></template>
+<script lang="ts">
+import Vue from 'vue'
+
 const supportedModifiers = ['altKey', 'metaKey', 'ctrlKey', 'shiftKey']
 
-export default {
-  name: "KeyPress",
+export default Vue.extend({
+  name: 'KeyPress',
   props: {
     keyEvent: {
       type: String,
@@ -29,20 +32,20 @@ export default {
     },
   },
   data: () => ({
-    keyListeners: [],
+    keyListeners: [] as any[],
   }),
   mounted() {
     this.setupListeners()
   },
   destroyed() {
-    for (const {keyEvent, listener} of this.keyListeners) {
+    for (const { keyEvent, listener } of this.keyListeners) {
       window.removeEventListener(keyEvent, listener)
     }
   },
   methods: {
     /** Initial Setup of the listeners */
     /** ****************************** */
-    setupListeners() {
+    setupListeners(): void {
       const expectedEvent = {
         keyEvent: this.keyEvent,
 
@@ -55,17 +58,17 @@ export default {
       }
       this.addEventListener(expectedEvent)
     },
-    addEventListener(expectedEvent) {
-      let listener = this.eventHandler(expectedEvent)
+    addEventListener(expectedEvent: any): void {
+      const listener = this.eventHandler(expectedEvent)
       window.addEventListener(expectedEvent.keyEvent, listener)
-      this.keyListeners.push({expectedEvent, listener})
+      this.keyListeners.push({ expectedEvent, listener })
     },
 
     /** Handling per keypress event */
     /** *************************** */
-    eventHandler(expectedEvent) {
-      return (event) => {
-        const emitResponse = (emitEvent, message) => {
+    eventHandler(expectedEvent: any): any {
+      return (event: any) => {
+        const emitResponse = (emitEvent: any, message: any) => {
           this.$emit(emitEvent, {
             event,
             expectedEvent,
@@ -96,12 +99,12 @@ export default {
           if (!correctKeyPressed) continue
 
           // Get modifiers:
-          let hasModifiers = expectedInput.modifiers.length > 0
+          const hasModifiers = expectedInput.modifiers.length > 0
 
           // Check if only the specified modifiers were pressed
           if (hasModifiers) {
             const modifiersPressed = supportedModifiers.every(
-                (x) => event[x] == (expectedInput.modifiers.indexOf(x) !== -1)
+                (x) => event[x] == expectedInput.modifiers.includes(x)
             )
             if (!modifiersPressed) continue
           }
@@ -121,7 +124,5 @@ export default {
       }
     },
   },
-  render: () => null,
-}
+})
 </script>
-
