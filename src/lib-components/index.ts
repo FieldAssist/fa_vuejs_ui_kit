@@ -7,3 +7,11 @@ export { default as WarningButton } from "./buttons/WarningButton.vue";
 
 // table
 export {default as TableNumberInput} from './table/TableNumberInput.vue';
+
+// card
+export {default as KpiCard} from './cards/KpiCard.vue';
+
+// misc
+export {default as KeyPress} from './misc/KeyPress.vue';
+
+
