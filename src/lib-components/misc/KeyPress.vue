@@ -2,7 +2,7 @@
 const supportedModifiers = ['altKey', 'metaKey', 'ctrlKey', 'shiftKey']
 
 export default {
-  name: "Keypress",
+  name: "KeyPress",
   props: {
     keyEvent: {
       type: String,
