@@ -8,7 +8,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import ttypescript from 'ttypescript';
 import typescript from 'rollup-plugin-typescript2';
 import minimist from 'minimist';
 
@@ -98,7 +97,6 @@ if (!argv.format || argv.format === 'es') {
       // Only use typescript for declarations - babel will
       // do actual js transformations
       typescript({
-        typescript: ttypescript,
         useTsconfigDeclarationDir: true,
         emitDeclarationOnly: true,
       }),
