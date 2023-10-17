@@ -1,0 +1,22 @@
+name: 'Notify on telegram/discord for pull request'
+on:
+  pull_request:
+    types: ['opened', 'reopened', 'synchronize', 'edited']
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - uses: TheTechNexus/pull_request_action@main
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          pull_number: ${{ github.event.number }}
+          github_api_key: ${{ secrets.CUSTOM_GITHUB_API_TOKEN }}
+          telegram_bot_token: ${{ secrets.iris_telegram_token }}
+          telegram_chat_id: -1001945935593

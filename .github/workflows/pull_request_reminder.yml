@@ -1,0 +1,23 @@
+# At 9:30 AM and 6:30 PM
+name: 'Notify On Telegram About Open Pull Requests'
+on:
+  schedule:
+    - cron: '0 4 * * *' # 9:30 AM
+    - cron: '0 13 * * *' # 6:30 PM
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - uses: TheTechNexus/pull_request_reminder@v0.0.1
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          github_api_key: ${{ secrets.CUSTOM_GITHUB_API_TOKEN }}
+          telegram_bot_token: ${{ secrets.iris_telegram_token }}
+          telegram_chat_id: -1001945935593
