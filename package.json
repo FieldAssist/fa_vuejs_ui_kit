@@ -53,5 +53,8 @@
     "node": ">=12"
   },
   "sideEffects": false,
-  "types": "dist/types/src/entry.esm.d.ts"
+  "types": "dist/types/src/entry.esm.d.ts",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
+  }
 }
