@@ -3,9 +3,8 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
     onButtonClick(): void;
     getColorClass(): string;
     getVariantClass(): string;
-    getSizeClass(): string;
-    getWidthClass(): string;
     getTextSizeClass(): string;
+    getWidthClass(): string;
     getBorderColorClass(): string;
     getTextColorClass(): string;
 }, {

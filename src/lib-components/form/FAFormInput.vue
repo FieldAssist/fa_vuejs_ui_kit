@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "MyNewFormInput",
+  name: "FAFormInput",
   props: {
     label: { type: String, default: null, required: false },
     required: { type: Boolean, default: false, required: false },

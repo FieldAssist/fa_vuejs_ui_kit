@@ -36,7 +36,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-// eslint-disable-next-line import/named
 import { createPopper, Instance } from "@popperjs/core";
 import Typography from "../Typography/Typography.vue";
 interface Option {
@@ -44,7 +43,7 @@ interface Option {
   title: string;
 }
 export default Vue.extend({
-  name: "MyNewFormDropDown",
+  name: "FAFormDropDown",
   components: { Typography },
   props: {
     prefix: {

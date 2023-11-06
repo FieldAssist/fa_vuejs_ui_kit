@@ -24,9 +24,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Typography from "../Typography/Typography.vue";
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
+  name: "AccordionDialog",
   components: {
     Typography,
   },
@@ -50,7 +53,7 @@ export default {
       this.isOpen = !this.isOpen;
     },
   },
-};
+});
 </script>
 
 <style scoped>
