@@ -1,5 +1,5 @@
-<script lang="ts">
-import Vue from "vue";
+<script setup lang="ts">
+import { ref, defineComponent } from "vue";
 import PrimaryButton from "@/lib-components/buttons/PrimaryButton.vue";
 import SuccessButton from "@/lib-components/buttons/SuccessButton.vue";
 import MutedButton from "@/lib-components/buttons/MutedButton.vue";
@@ -8,25 +8,10 @@ import DangerButton from "@/lib-components/buttons/DangerButton.vue";
 import TableNumberInput from "@/lib-components/table/TableNumberInput.vue";
 import KpiCard from "@/lib-components/cards/KpiCard.vue";
 
-export default Vue.extend({
-  name: "ServeDev",
-  components: {
-    TableNumberInput,
-    DangerButton,
-    WarningButton,
-    MutedButton,
-    SuccessButton,
-    PrimaryButton,
-    KpiCard,
-  },
-  data() {
-    return {
-      myNumber: null as unknown as any,
-      myNumber2: 10,
-      myNumber3: 10,
-    };
-  },
-});
+// Component logic
+const myNumber = ref<any>(null);
+const myNumber2 = ref(10);
+const myNumber3 = ref(10);
 </script>
 
 <template>

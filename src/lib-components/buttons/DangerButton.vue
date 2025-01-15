@@ -12,19 +12,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script setup lang="ts">
+import { defineEmits, defineProps } from "vue";
 
-export default Vue.extend({
-  name: "DangerButton",
-  props: {
-    disabled: { type: Boolean, default: false, required: false },
-    icon: { type: String, required: false, default: "" },
-  },
-  methods: {
-    onButtonClick() {
-      this.$emit("click");
-    },
-  },
-})
+const props = defineProps({
+  disabled: { type: Boolean, default: false, required: false },
+  icon: { type: String, required: false, default: "" },
+});
+
+const emit = defineEmits(["click"]);
+
+const onButtonClick = () => {
+  emit("click");
+};
 </script>

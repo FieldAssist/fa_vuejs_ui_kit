@@ -13,35 +13,25 @@
 
 <template>
   <input
-      v-model="enteredText"
-      :disabled="disabled"
-      :max="isPercentage ? 100 : null"
-      :min="0"
-      class="w-[4.5rem] rounded border border-gray-300 py-1 px-1 text-center"
-      type="number"
-      @input="$emit('on-change')"
+    :value="modelValue"
+    :disabled="disabled"
+    :max="isPercentage ? 100 : null"
+    :min="0"
+    class="w-[4.5rem] rounded border border-gray-300 py-1 px-1 text-center"
+    type="number"
+    @input="
+      $emit('update:modelValue', ($event.target as HTMLInputElement).value)
+    "
+    @change="$emit('on-change')"
   />
 </template>
 
-<script lang="ts">
-import Vue, {PropType} from "vue";
+<script setup lang="ts">
+defineProps({
+  modelValue: { default: 0 },
+  disabled: { default: false, type: Boolean },
+  isPercentage: { default: false, type: Boolean },
+});
 
-export default Vue.extend({
-  name: 'TableNumberInput',
-  props: {
-    value: {default: 0, required: false},
-    disabled: {default: false, required: false, type: Boolean},
-    isPercentage: {default: false, required: false, type: Boolean as PropType<boolean>},
-  },
-  computed: {
-    enteredText: {
-      get() {
-        return (this as any).value
-      },
-      set(val) {
-        (this as Vue).$emit('input', val)
-      },
-    },
-  },
-})
+defineEmits(["update:modelValue", "on-change"]);
 </script>

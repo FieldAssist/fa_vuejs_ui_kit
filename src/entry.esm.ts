@@ -1,22 +1,28 @@
-import _Vue, { PluginFunction } from 'vue';
+import type { App, Component } from "vue";
 
 // Import vue components
-import * as components from '@/lib-components/index';
+import * as components from "@/lib-components/index";
 
-// install function executed by Vue.use()
-const install: PluginFunction<any> = function installFa_vuejs_ui_kit(Vue: typeof _Vue) {
+// Type guard to check if value is a Vue component
+const isVueComponent = (value: any): value is Component => {
+  return value && typeof value === "object" && "setup" in value;
+};
+
+// install function executed by app.use()
+const install = (app: App) => {
   Object.entries(components).forEach(([componentName, component]) => {
-    Vue.component(componentName, component);
+    if (isVueComponent(component)) {
+      app.component(componentName, component);
+    }
   });
 };
 
-// Create module definition for Vue.use()
 export default install;
 
 // To allow individual component use, export components
-// each can be registered via Vue.component()
-export * from '@/lib-components/index';
+export * from "@/lib-components/index";
 
+// Type definitions
 export interface KeyPress {
   keyCode: number;
   keyEvent: string;

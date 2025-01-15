@@ -14,55 +14,36 @@
         {{ title }}
       </div>
 
-      <div
-        class="rounded-bottom mt-1 text-left text-2xl font-medium text-black"
-      >
+      <div class="rounded-bottom mt-1 text-left text-2xl font-medium text-black">
         <span v-if="money" class="text-black">₹</span>
-        {{ formatValue(data) || 0 }}
+        {{ formattedValue }}
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script setup lang="ts">
+import { computed } from 'vue'
 
-export default Vue.extend({
-  name: "KpiCard",
-  props: {
-    title: { type: String, default: "--", required: true },
-    data: { default: 0, required: true },
-    bgColor: {
-      type: String,
-      default: "bg-gradient-to-r from-gray-200 to-gray-400",
-      required: false,
-    },
-    money: { type: Boolean, default: false },
+const props = defineProps({
+  title: { type: String, default: "--", required: true },
+  data: { default: 0, required: true },
+  bgColor: {
+    type: String,
+    default: "bg-gradient-to-r from-gray-200 to-gray-400",
   },
-  computed: {
-    titleStyle() {
-      return {
-        "font-size": "1.0rem",
-        "font-weight": "500",
-      };
-    },
-  },
-  methods: {
-    formatValue(data: any) {
-      return this.changeNumberFormat(data);
-    },
-    changeNumberFormat(number: number): any {
-      if (isNaN(number)) return 0;
-      let displayStr;
-      if (number >= 100000 && number < 10000000) {
-        displayStr = (number / 100000).toPrecision(3) + " L";
-        return displayStr;
-      } else if (number >= 10000000) {
-        displayStr = (number / 10000000).toPrecision(3) + " Cr";
-        return displayStr;
-      }
-      return number || 0;
-    },
-  },
+  money: { type: Boolean, default: false },
 });
+
+const changeNumberFormat = (number: number): string | number => {
+  if (isNaN(number)) return 0;
+  if (number >= 100000 && number < 10000000) {
+    return `${(number / 100000).toPrecision(3)} L`;
+  } else if (number >= 10000000) {
+    return `${(number / 10000000).toPrecision(3)} Cr`;
+  }
+  return number || 0;
+};
+
+const formattedValue = computed(() => changeNumberFormat(props.data));
 </script>
